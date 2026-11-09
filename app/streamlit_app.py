@@ -1,4 +1,15 @@
 
+import sys
+from pathlib import Path
+
+# Add the main project directory to Python's import path
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+
+# Import required libraries
 import streamlit as st
 import pandas as pd
 
@@ -110,7 +121,7 @@ if section == "Employee Management":
     if not department_options:
 
         st.warning(
-            "No departments found. Please check your MySQL database."
+            "No departments found. Please check your MySQL connection."
         )
 
     else:
@@ -221,7 +232,6 @@ if section == "Employee Management":
                                 "Check the employee ID and database error."
                             )
 
-
         st.divider()
 
 
@@ -258,7 +268,6 @@ if section == "Employee Management":
 
                 st.warning("Employee not found.")
 
-
         st.divider()
 
 
@@ -293,7 +302,6 @@ if section == "Employee Management":
             else:
 
                 st.info("No employee records found.")
-
 
         st.divider()
 
@@ -403,7 +411,6 @@ if section == "Employee Management":
                                 "Check the employee ID or database error."
                             )
 
-
         st.divider()
 
 
@@ -447,7 +454,7 @@ if section == "Employee Management":
 
                             st.error(
                                 "Deletion failed. The employee may not exist "
-                                "or may have related records."
+                                "or may have related reviews or assignments."
                             )
 
                     else:
@@ -498,7 +505,6 @@ elif section == "Analytics Dashboard":
 
         st.info("No yearly performance data available.")
 
-
     st.divider()
 
 
@@ -530,7 +536,6 @@ elif section == "Analytics Dashboard":
     else:
 
         st.info("No employee performance data available.")
-
 
     st.divider()
 
@@ -566,7 +571,6 @@ elif section == "Analytics Dashboard":
     else:
 
         st.info("No attrition data available.")
-
 
     st.divider()
 
