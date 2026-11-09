@@ -1,0 +1,6 @@
+pandas
+Faker
+mysql-connector-python
+streamlit
+plotly
+python-dotenv

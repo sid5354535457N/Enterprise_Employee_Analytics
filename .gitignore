@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/raw/
+data/processed/
+# Temporary testing files
+src/test_connection.py
+src/test_employee.py
+src/test_project.py
+src/test_review.py
+src/test_employee_manager.py
+src/test_analytics_manager.py
+
+# macOS files
+.DS_Store
